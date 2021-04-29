@@ -1,0 +1,171 @@
+#case {
+  position: absolute;
+  top: 25%;
+  height: 100%;
+  width: auto;
+}
+#case #cellphone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 100%;
+  width: auto;
+  -webkit-transition: left 0.5s linear;
+  transition: left 0.5s linear;
+}
+@media only screen and (max-width: 768px) {
+  #case {
+    display: none;
+    width: 0;
+  }
+}
+.phone-padding {
+  -webkit-transition: margin-left 0.5s linear;
+  transition: margin-left 0.5s linear;
+}
+.hex-grid ol:nth-child(2n-1) {
+  position: relative;
+  left: 5.4545454545rem;
+}
+.hex-grid ol:nth-child(2n) {
+  position: relative;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+.hex-grid .hex {
+  position: relative;
+  width: 10.2rem;
+  height: 6rem;
+  background-color: rgb(26, 80, 197);
+  display: inline-block;
+  margin-right: 0.5rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.hex-grid .hex:before,
+.hex-grid .hex:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: "";
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+.hex-grid .hex:after {
+  -webkit-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+.hex-grid .hex:active {
+  -webkit-transform: scale3d(0.9, 0.9, 1);
+  transform: scale3d(0.9, 0.9, 1);
+}
+@media only screen and (min-width: 769px) {
+  .hex-grid .hex:hover {
+    background: rgb(136, 136, 136);
+    cursor: pointer;
+  }
+}
+.hex-grid h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 3rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.hex-grid h1.small {
+  font-size: 200%;
+}
+@media only screen and (max-width: 768px) {
+  .hex-grid .hex {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+  }
+  .hex-grid .hex:active {
+    background-color: #888;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hex-grid ol:nth-child(2n-1) {
+    left: 2.7272727273rem;
+  }
+  .hex-grid .hex {
+    width: 5.1rem;
+    height: 3rem;
+  }
+  .hex-grid ol:nth-child(2n) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .hex-grid h1 {
+    font-size: 150%;
+    line-height: 0;
+  }
+  .hex-grid h1.small {
+    font-size: 110%;
+  }
+}
+#notification {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+}
+#notification.active {
+  opacity: 1;
+}
+#notification h1 {
+  display: inline;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(221, 221, 221, 0.8);
+  cursor: pointer;
+  pointer-events: initial;
+}
+section {
+  height: auto;
+}
+section.full {
+  height: 100%;
+}
+section.pad {
+  margin-bottom: 4rem;
+}
+#padding {
+  height: 20%;
+}
+div.img-container {
+  width: 100%;
+  padding: 0 1rem;
+}
+div.img-container img {
+  width: 100%;
+}
+div.img-container.center {
+  text-align: center;
+}
+div.img-container.center img {
+  width: 50%;
+}
+div.img-container.center .footnote {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 75%;
+}

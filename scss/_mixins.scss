@@ -1,0 +1,60 @@
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: '';
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+	-webkit-animation: $animations;
+	-moz-animation:    $animations;
+	-o-animation:      $animations;
+	animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+$phone-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+@mixin phone {
+	@media only screen and (max-width: #{$phone-width}) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media only screen and (min-width: #{$phone-width + 1px}) and (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media only screen and (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media only screen and (min-width: #{$tablet-width + 1px}) {
+		@content;
+	}
+}
+@mixin larger {
+	@media only screen and (min-width: #{$phone-width + 1px}) {
+		@content;
+	}
+}

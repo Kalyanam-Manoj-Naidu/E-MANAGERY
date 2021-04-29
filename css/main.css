@@ -1,0 +1,304 @@
+#statusbar {
+  position: fixed;
+  height: 20px;
+  width: 100%;
+  background-color: rgba(230, 230, 230, 0.95);
+  z-index: 1000;
+}
+#home {
+  display: block;
+  position: fixed;
+  width: 4em;
+  height: 4em;
+  left: 1.5em;
+  top: 1.5em;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 4em;
+  color: white;
+  background-color: rgba(38, 3, 196, 0.7);
+  z-index: 100;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+@media only screen and (min-width: 769px) {
+  #home:hover {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #home {
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+  }
+  #home:active {
+    opacity: 1;
+    -webkit-transform: scale3d(0.9, 0.9, 1);
+    transform: scale3d(0.9, 0.9, 1);
+  }
+}
+#preload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background-color: #fff;
+  font-size: 200%;
+  z-index: 999;
+  -webkit-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+}
+#preload.gone {
+  height: 0;
+}
+#preload.gone .content {
+  opacity: 0;
+}
+#preload .content {
+  -webkit-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+}
+#preload .content h1 {
+  padding-bottom: 3rem;
+}
+@media only screen and (max-width: 480px) {
+  #preload {
+    bottom: 0;
+    -webkit-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+  }
+  #preload.gone {
+    height: auto;
+    opacity: 0;
+  }
+  #preload.gone .content {
+    opacity: 1;
+  }
+}
+#preload .fa {
+  font-size: 5rem;
+}
+#slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: url("../images/picture-064.jpg") center center;
+}
+#start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.85)
+  );
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+  z-index: 2;
+}
+#start h1 {
+  font-size: 500%;
+  font-weight: 200;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+#scroll-indicator {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 3;
+}
+#scroll-indicator a {
+  height: 7rem;
+  width: 7rem;
+  text-align: center;
+  line-height: 7rem;
+  border-radius: 100%;
+  font-size: 500%;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.5;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+#scroll-indicator a:hover {
+  opacity: 0.7;
+}
+@media only screen and (min-width: 769px) {
+  #scroll-indicator a {
+    -webkit-transition: opacity 0.1s linear, text-shadow 0.1s linear;
+    transition: opacity 0.1s linear, text-shadow 0.1s linear;
+  }
+  #scroll-indicator a:hover {
+    text-shadow: 0 1rem 0 rgba(51, 51, 51, 0.7);
+  }
+}
+@media only screen and (max-width: 768px) {
+  #scroll-indicator a {
+    -webkit-transition: opacity 0.1s linear, -webkit-transform 0.1s linear;
+    transition: opacity 0.1s linear, transform 0.1s linear;
+  }
+  #scroll-indicator a:active {
+    opacity: 0.7;
+    -webkit-transform: scale3d(0.9, 0.9, 1);
+    transform: scale3d(0.9, 0.9, 1);
+  }
+}
+.scroll-down {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+  text-align: center;
+  pointer-events: none;
+  z-index: 100;
+}
+.scroll-down.active {
+  opacity: 0.9;
+}
+.scroll-down h1 {
+  font-size: 200%;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin: 0;
+}
+.scroll-down .fa {
+  font-size: 3rem;
+}
+#padding {
+  height: 200%;
+}
+#bg1 {
+  width: 100%;
+  z-index: -5;
+  left: 0;
+  position: fixed;
+  top: 0;
+  height: 118%;
+  background: url("../images/circuit_board.jpg") center top;
+  background-size: 100% auto;
+  opacity: 0.15;
+}
+#chart {
+  width: 75%;
+  height: 75%;
+  z-index: 1;
+}
+@media only screen and (max-width: 480px) {
+  #chart {
+    width: 100%;
+    height: 100%;
+  }
+}
+#section2 {
+  z-index: 0;
+}
+#barchart {
+  width: 90%;
+  margin-right: 5%;
+}
+#preload-images {
+  display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+@media only screen and (max-width: 480px) {
+  section {
+    height: auto;
+    padding: 1rem 0;
+  }
+  section#start {
+    height: 100%;
+  }
+  section.cols .col.right,
+  section.cols .col.left {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #notification {
+    position: fixed;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    color: white;
+    background-color: rgba(80, 80, 80, 0.95);
+    -webkit-transition: bottom 0.2s linear;
+    transition: bottom 0.2s linear;
+    z-index: 10;
+  }
+  #notification.gone {
+    bottom: -5rem;
+  }
+  #notification img {
+    width: 4rem;
+    margin: 1rem;
+    -webkit-transition: -webkit-filter 0.1s linear;
+    -moz-transition: -moz-filter 0.1s linear;
+    -ms-transition: -ms-filter 0.1s linear;
+    -o-transition: -o-filter 0.1s linear;
+  }
+  #notification img:active {
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+  }
+  #notification div {
+    width: 100%;
+    padding-right: 1rem;
+    opacity: 0.9;
+  }
+  #notification div h1 {
+    font-size: 100%;
+    font-weight: 300;
+    margin: 0;
+    padding-bottom: 0.25rem;
+  }
+  #notification div p {
+    font-size: 90%;
+    font-weight: 300;
+    color: white;
+  }
+  #notification span {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-weight: 200;
+    font-size: 110%;
+    -webkit-transition: -webkit-transform 0.1s linear;
+    transition: transform 0.1s linear;
+  }
+  #notification span:active {
+    -webkit-transform: scale3d(0.8, 0.8, 1);
+    transform: scale3d(0.8, 0.8, 1);
+  }
+}

@@ -1,0 +1,226 @@
+main > h1 {
+  padding-left: 2rem;
+}
+section {
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding-right: 1rem;
+}
+section p {
+  padding: 0 2rem 2rem;
+  font-weight: 300;
+  line-height: 125%;
+}
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  section p {
+    padding: 0 1rem 2rem;
+  }
+}
+.tile {
+  background-color: #ddd;
+  position: relative;
+  width: 20rem;
+  height: 15rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  -webkit-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+  overflow: hidden;
+}
+.tile:hover {
+  background-color: rgba(221, 221, 221, 0.5);
+}
+.tile:hover .fa {
+  opacity: 0.8;
+}
+.tile a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-size: 150%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.tile a h1,
+.tile a h2,
+.tile a h3,
+.tile a h4,
+.tile a h5,
+.tile a h6 {
+  text-align: center;
+  color: black;
+  z-index: 1;
+}
+.tile .fa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #ddd;
+  line-height: 15rem;
+  text-align: center;
+  font-size: 20rem;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+  z-index: 0;
+}
+@media only screen and (min-width: 481px) {
+  .tile.large {
+    width: 41rem;
+    -webkit-box-flex: 2;
+    -webkit-flex-grow: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+  }
+  .tile.large .fa {
+    font-size: 40rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .tile {
+    -webkit-transition: background-color 0.1s linear,
+      -webkit-transform 0.1s linear;
+    transition: background-color 0.1s linear, transform 0.1s linear;
+  }
+  .tile:active {
+    -webkit-transform: scale3d(0.9, 0.9, 1);
+    transform: scale3d(0.9, 0.9, 1);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .tile {
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0 0 1rem 0;
+  }
+}
+#edn {
+  background-color: #a5d6a7;
+}
+#edn:hover {
+  background-color: rgba(165, 214, 167, 0.5);
+}
+#edn .fa {
+  color: #d0d0d0;
+}
+#fec .fa {
+  color: #90caf9;
+}
+#ifi .fa {
+  color: #b8dea9;
+}
+#ep {
+  background-color: #c5e1a5;
+}
+#ep:hover {
+  background-color: rgba(197, 225, 165, 0.5);
+}
+#ee .fa {
+  color: #bcaaa4;
+}
+#rfy {
+  position: relative;
+  background-color: #d0e1f6;
+}
+#rfy:hover {
+  background-color: rgba(208, 225, 246, 0.5);
+}
+#rfy:hover:before {
+  opacity: 0.2;
+}
+#rfy:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(http://www.rebootforyouth.org/uploads/3/7/0/5/37052487/1424053513.png)
+    no-repeat center;
+  background-size: contain;
+  opacity: 0.3;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  pointer-events: none;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+#be .fa {
+  color: #bdbdbd;
+}
+#gp .fa {
+  color: #a5d6a7;
+}
+#etc {
+  background-color: #f48fb1;
+}
+#etc:hover {
+  background-color: rgba(244, 143, 177, 0.5);
+}
+#etc .fa {
+  font-size: 25rem;
+}
+#rcr {
+  background-color: #b3cce6;
+}
+#rcr:hover {
+  background-color: rgba(179, 204, 230, 0.5);
+}
+#rcr .fa {
+  color: #d0d0d0;
+  font-size: 13rem;
+}
+#wea .fa {
+  color: #fff176;
+}
+#epa {
+  background-color: #bfcad0;
+}
+#epa:hover {
+  background-color: rgba(191, 202, 208, 0.5);
+}
+#epa .fa {
+  font-size: 15rem;
+  color: #d0d0d0;
+}

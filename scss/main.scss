@@ -1,0 +1,261 @@
+@import 'mixins';
+
+#statusbar {
+	position: fixed;
+	height: 20px;
+	width: 100%;
+	background-color: rgba(230, 230, 230, 0.95);
+	z-index: 1000;
+}
+#home {
+	display: block;
+	position: fixed;
+	width: 4em;
+	height: 4em;
+	left: 1.5em;
+	top: 1.5em;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 4em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+	opacity: 0.5;
+	transition: opacity 0.1s linear;
+	@include desktop {
+		&:hover {
+			opacity: 1;
+		}
+	}
+	@include mobile {
+		transition: transform 0.1s linear;
+		&:active {
+			opacity: 1;
+			transform: scale3d(0.9, 0.9, 1);
+		}
+	}
+}
+#preload {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #FFF;
+	background-color: #FFF;
+	font-size: 200%;
+	z-index: 999;
+	transition: height 0.5s linear;
+	&.gone {
+		height: 0;
+		.content {
+			opacity: 0;
+		}
+	}
+	.content {
+		transition: opacity 0.25s linear;
+		h1 {
+			padding-bottom: 3rem;
+		}
+	}
+	// Height 100% does not work properly on phones
+	@include phone {
+		bottom: 0;
+		transition: opacity 0.5s linear;
+		&.gone {
+			height: auto;
+			opacity: 0;
+			.content {
+				opacity: 1;
+			}
+		}
+	}
+	.fa {
+		font-size: 5rem;
+	}
+}
+#slider {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: url("../images/picture-064.jpg") center center;
+}
+#start {
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: #FFF;
+	background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+	z-index: 2;
+	h1 {
+		font-size: 500%;
+		font-weight: 200;
+		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+	}
+}
+#scroll-indicator {
+	display: flex;
+	position: fixed;
+	bottom: 1rem;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	z-index: 3;
+	a {
+		height: 7rem;
+		width: 7rem;
+		text-align: center;
+		line-height: 7rem;
+		border-radius: 100%;
+		font-size: 500%;
+		background-color: rgba(#FFF, 0.9);
+		opacity: 0.5;
+		transition: opacity 0.1s linear;
+		&:hover {
+			opacity: 0.7;
+		}
+		@include desktop {
+			transition: opacity 0.1s linear, text-shadow 0.1s linear;
+			&:hover {
+				text-shadow: 0 1rem 0 rgba(#333, 0.7);
+			}
+		}
+		@include mobile {
+			transition: opacity 0.1s linear, transform 0.1s linear;
+			&:active {
+				opacity: 0.7;
+				transform: scale3d(0.9, 0.9, 1);
+			}
+		}
+	}
+}
+.scroll-down {
+	position: fixed;
+	bottom: 1rem;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	text-align: center;
+	pointer-events: none;
+	z-index: 100;
+	&.active {
+		opacity: 0.9;
+	}
+	h1 {
+		font-size: 200%;
+		font-weight: 200;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	.fa {
+		font-size: 3rem;
+	}
+}
+#padding {
+	height: 200%;
+}
+#bg1 {
+	width: 100%;
+	z-index: -5;
+	left: 0;
+	position: fixed;
+	top: 0;
+	height: 118%;   // aspect ratio of image
+	background: url("../images/circuit_board.jpg") center top;
+	background-size: 100% auto;
+	opacity: 0.15;
+}
+#chart {
+	width: 75%;
+	height: 75%;
+	z-index: 1;
+	@include phone {
+		width: 100%;
+		height: 100%;
+	}
+}
+#section2 {
+	z-index: 0;
+}
+#barchart {
+	width:90%;
+	margin-right: 5%;
+}
+#preload-images {
+	display: none;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+@include phone {
+	section {
+		height: auto;
+		padding: 1rem 0;
+		&#start {
+			height: 100%;
+		}
+		&.cols .col.right, &.cols .col.left{
+			justify-content: center;
+			text-align: center;
+		}
+	}
+}
+@include mobile {
+	#notification {
+		position: fixed;
+		display: flex;
+		bottom: 0;
+		left: 0;
+		align-items: center;
+		height: 5rem;
+		width: 100%;
+		color: white;
+		background-color: rgba(80, 80, 80, 0.95);
+		transition: bottom 0.2s linear;
+		z-index: 10;
+		&.gone {
+			bottom: -5rem;
+		}
+		img {
+			width: 4rem;
+			margin: 1rem;
+			-webkit-transition: -webkit-filter 0.1s linear;
+			-moz-transition: -moz-filter 0.1s linear;
+			-ms-transition: -ms-filter 0.1s linear;
+			-o-transition: -o-filter 0.1s linear;
+			&:active {
+				filter: brightness(75%);
+			}
+		}
+		div {
+			width: 100%;
+			padding-right: 1rem;
+			opacity: 0.9;
+			h1 {
+				font-size: 100%;
+				font-weight: 300;
+				margin: 0;
+				padding-bottom: 0.25rem;
+			}
+			p {
+				font-size: 90%;
+				font-weight: 300;
+				color: white;
+			}
+		}
+		span {
+			position: absolute;
+			top: 0.5rem;
+			right: 0.75rem;
+			font-weight: 200;
+			font-size: 110%;
+			transition: transform 0.1s linear;
+			&:active {
+				transform: scale3d(0.8, 0.8, 1);
+			}
+		}
+	}
+}

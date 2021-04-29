@@ -1,0 +1,108 @@
+@import "mixins";
+
+div.img-container {
+	width: 100%;
+	img {
+		width: 100%
+	}
+}
+main {
+	top: 0;
+}
+section {
+	height: auto;
+	&.full {
+		height: 100%;
+	}
+	&.half {
+		height: 50%;
+	}
+	&.cols .col {
+		justify-content: center;
+		padding: 2rem 0;
+		&.left {
+			justify-content: flex-start;
+			text-align: left;
+		}
+		.fa {
+			width: 100%;
+			text-align: center;
+		}
+		h1, h2, h3, h4, h5 {
+			text-align: center;
+		}
+	}
+	h1 ~ h2 {
+		padding: 2rem 0;
+	}
+	h2 {
+		padding: 1rem 0;
+	}
+	h3 {
+		font-weight: 300;
+		font-size: 200%;
+		&:first-child {
+			padding: 2rem 0 0;
+		}
+	}
+	p {
+		font-weight: 300;
+		line-height: 125%;
+		@include larger {
+			font-size: 140%;
+		}
+	}
+}
+#hero {
+	color: white;
+	background-color: #333;
+	height: calc(50% + 4rem);
+	padding-top: 4rem;
+}
+#three-col {
+	height: calc(50% - 4rem);
+	.col {
+		color: inherit;
+		background-color: #EEE;
+		transition: color 0.1s linear, background-color 0.1s linear;
+		&:hover {
+			background-color: rgba(#EEE, 0.6);
+		}
+		div {
+			width: 75%;
+			color: inherit;
+			text-align: center;
+			font-weight: 300;
+			font-size: 110%;
+			h2 {
+				margin: 0;
+			}
+		}
+	}
+	#reduce-col:hover {
+		color: #1976D2;
+	}
+	#reuse-col:hover {
+		color: #388E3C;
+	}
+	#recycle-col:hover {
+		color: #F57C00;
+	}
+	@include phone {
+		height: auto;
+		.col:not(:last-of-type) {
+			border-bottom: solid #DDD 1px;
+		}
+	}
+}
+#reduce {
+	color: white;
+	background-color: #2196F3;
+}
+#reuse {
+	color: white;
+	background-color: #4CAF50;
+}
+#recycle {
+	background-color: #FFC107;
+}

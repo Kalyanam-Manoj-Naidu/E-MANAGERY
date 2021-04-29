@@ -1,0 +1,165 @@
+@import "mixins";
+
+#case {
+	position: absolute;
+	top: 25%;
+	height: 100%;
+	width: auto;
+	#cellphone {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-height: 100%;
+		width: auto;
+		transition: left 0.5s linear;
+	}
+	@include mobile {
+		display: none;
+		width: 0;
+	}
+}
+.phone-padding {
+	transition: margin-left 0.5s linear;
+}
+$hex-size: 6rem;
+$mini-hex-size: 3rem;
+.hex-grid {
+	ol:nth-child(2n-1) {
+		position: relative;
+		left: ($hex-size / 1.1);
+	}
+	ol:nth-child(2n) {
+		position: relative;
+		margin-top: 3.5rem;
+		margin-bottom: 3.5rem;
+	}
+	.hex {
+		position: relative;
+		width: ($hex-size * 1.7);
+		height: $hex-size;
+		background-color: #444;
+		display: inline-block;
+		margin-right: 0.5rem;
+		transition: all 0.1s ease-in-out;
+		&:before {
+			position: absolute;
+			width: inherit; height: inherit;
+			border-radius: inherit;
+			background: inherit;
+			content: "";
+			transform: rotate(60deg);
+		}
+		&:after {
+			@extend .hex:before;
+			transform: rotate(-60deg);
+		}
+		&:active {
+			transform: scale3d(0.9, 0.9, 1);
+		}
+		@include desktop {
+			&:hover {
+				background: #888;
+				cursor: pointer;
+			}
+		}
+	}
+	h1 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0;
+		color: white;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 3rem;
+		z-index: 2;
+		pointer-events: none;
+		&.small {
+			font-size: 200%;
+		}
+	}
+	@include mobile {
+		.hex {
+			// Remove default tap highlight
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-tap-highlight-color: transparent;
+			transition: transform 0.1s linear;
+			&:active {
+				background-color: #888;
+			}
+		}
+	}
+	@include phone {
+		ol:nth-child(2n-1) {
+			left: ($mini-hex-size / 1.1);
+		}
+		.hex {
+			width: ($mini-hex-size * 1.7);
+			height: $mini-hex-size;
+		}
+		ol:nth-child(2n) {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+		h1 {
+			font-size: 150%;
+			line-height: 0;
+			&.small {
+				font-size: 110%;
+			}
+		}
+	}
+}
+#notification {
+	position: fixed;
+	bottom: 2rem;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 100;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.25s linear;
+	&.active {
+		opacity: 1;
+	}
+	h1 {
+		display: inline;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		background-color: rgba(#DDD, 0.8);
+		cursor: pointer;
+		pointer-events: initial;
+	}
+}
+section {
+	height: auto;
+	&.full {
+		height: 100%;
+	}
+	&.pad {
+		margin-bottom: 4rem;
+	}
+}
+#padding {
+	height: 20%;
+}
+div.img-container {
+	width: 100%;
+	padding: 0 1rem;
+	img {
+		width: 100%;
+	}
+	&.center {
+		text-align: center;
+		img {
+			width: 50%
+		}
+		.footnote {
+			position: relative;
+			text-transform: uppercase;
+			font-size: 75%;
+		}
+	}
+}

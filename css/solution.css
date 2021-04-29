@@ -1,0 +1,121 @@
+div.img-container {
+  width: 100%;
+}
+div.img-container img {
+  width: 100%;
+}
+main {
+  top: 0;
+}
+section {
+  height: auto;
+}
+section.full {
+  height: 100%;
+}
+section.half {
+  height: 50%;
+}
+section.cols .col {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+section.cols .col.left {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+section.cols .col .fa {
+  width: 100%;
+  text-align: center;
+}
+section.cols .col h1,
+section.cols .col h2,
+section.cols .col h3,
+section.cols .col h4,
+section.cols .col h5 {
+  text-align: center;
+}
+section h1 ~ h2 {
+  padding: 2rem 0;
+}
+section h2 {
+  padding: 1rem 0;
+}
+section h3 {
+  font-weight: 300;
+  font-size: 200%;
+}
+section h3:first-child {
+  padding: 2rem 0 0;
+}
+section p {
+  font-weight: 300;
+  line-height: 125%;
+}
+@media only screen and (min-width: 481px) {
+  section p {
+    font-size: 140%;
+  }
+}
+#hero {
+  color: white;
+  background-color: #333;
+  height: calc(50% + 4rem);
+  padding-top: 4rem;
+}
+#three-col {
+  height: calc(50% - 4rem);
+}
+#three-col .col {
+  color: inherit;
+  background-color: #eee;
+  -webkit-transition: color 0.1s linear, background-color 0.1s linear;
+  transition: color 0.1s linear, background-color 0.1s linear;
+}
+#three-col .col:hover {
+  background-color: rgba(238, 238, 238, 0.6);
+}
+#three-col .col div {
+  width: 75%;
+  color: inherit;
+  text-align: center;
+  font-weight: 300;
+  font-size: 110%;
+}
+#three-col .col div h2 {
+  margin: 0;
+}
+#three-col #reduce-col:hover {
+  color: #1976d2;
+}
+#three-col #reuse-col:hover {
+  color: #388e3c;
+}
+#three-col #recycle-col:hover {
+  color: #f57c00;
+}
+@media only screen and (max-width: 480px) {
+  #three-col {
+    height: auto;
+  }
+  #three-col .col:not(:last-of-type) {
+    border-bottom: solid #ddd 1px;
+  }
+}
+#reduce {
+  color: white;
+  background-color: #2196f3;
+}
+#reuse {
+  color: white;
+  background-color: #4caf50;
+}
+#recycle {
+  background-color: #ffc107;
+}
